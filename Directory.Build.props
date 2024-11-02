@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup Label="Runtime SDK">
+    <DefaultTargetFramework>net8.0</DefaultTargetFramework>
+    <OtherSupportedFrameworks>net6.0</OtherSupportedFrameworks>
+    <AllTargetFrameworks>$(DefaultTargetFramework);$(OtherSupportedFrameworks)</AllTargetFrameworks>
+    <IsTestProject>$(MSBuildProjectName.Contains('.Tests'))</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup Label="Testing Internals" Condition="'$(IsTestProject)' != 'true'">
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>$(AssemblyName).Tests</_Parameter1>
+      <!-- We use the value of AssemblyName to declare the value of the attribute -->
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+      <!-- We use the value of AssemblyName to declare the value of the attribute -->
+    </AssemblyAttribute>
+  </ItemGroup>
+
+</Project>

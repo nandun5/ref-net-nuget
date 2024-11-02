@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>$(AllTargetFrameworks)</TargetFrameworks>
+    <AssemblyName>Nandun.Reference.SampleDomain</AssemblyName>
+    <RootNamespace>Nandun.Reference.SampleDomain</RootNamespace>
+    <Authors>Nandun Wijesinghe</Authors>
+    <Company>Company Name</Company>
+    <Description>Allows interacting with the Storage Table that contains  sample Data.</Description>
+    <Copyright>Copyright 2024 (c) Company Name.</Copyright>
+    <Product>Sample Data Product</Product>
+    <PackageProjectUrl>https://github.com/nandun5/ref-net-nuget</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nandun5/ref-net-nuget.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>SampleDomain</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Data.Tables" Version="12.9.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
